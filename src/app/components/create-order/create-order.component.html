@@ -1,0 +1,14 @@
+<p>create-order works!</p>
+<form (submit)="createOrder()">
+    <label>Title:</label>
+    <input [(ngModel)]="newOrder.title" required>
+    <br>
+    <label>Description:</label>
+    <textarea [(ngModel)]="newOrder.description" required></textarea>
+    <br>
+    <label>Assigned To:</label>
+    <input [(ngModel)]="newOrder.assignedTo" required>
+    <br>
+    <button type="submit">Create Order</button>
+  </form>
+  
