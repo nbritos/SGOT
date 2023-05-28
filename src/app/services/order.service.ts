@@ -9,7 +9,15 @@ import { Order } from "../models/order.model";
 export class OrderService {
     private orders: Order[] = [];
 
-    constructor() { }
+    constructor() {
+        this.orders = [{
+            id:1,
+            title:'Caldera 1 rota',
+            description:'Reparar fuga en caja de humo',
+            assignedTo:'Sabrina',
+            status:'Backorder'
+        }]
+    }
 
     getOrders(): Order[] {
         return this.orders;
@@ -21,12 +29,12 @@ export class OrderService {
 
     updateOrderStatus(orderId: number, newStatus: string): void {
 
-        const order=this.orders.find(o=> o.id===orderId);
+        const order = this.orders.find(o => o.id === orderId);
         //si encuentra la orden..
-        if (order){
+        if (order) {
             //cambia al nuevo estado pasado por parámetro
-            order.status=newStatus;
-        } 
+            order.status = newStatus;
+        }
     }
 
 }

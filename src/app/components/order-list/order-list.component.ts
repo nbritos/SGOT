@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Order } from 'src/app/models/order.model';
+import { User } from 'src/app/models/user.model';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderListComponent {
   orders: Order[] = [];
+  // user:User={};
 
   constructor(private orderService: OrderService) { }
 
