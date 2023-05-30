@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user.model';
+import {Usuario } from '../models/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { User } from '../models/user.model';
 export class UserService {
   API_URI = 'http://localhost:3000/user';
 
-  usuarios: User[];
+  usuarios: Usuario[];
 
   constructor(private http: HttpClient) {
     this.usuarios = [{
@@ -17,31 +17,31 @@ export class UserService {
       "nombre": "Pedro",
       "email": "pedro@email.net",
       "password": "123456",
-      "rol": "admin"
+      "rol": 1
     }, {
       "id": 2,
       "nombre": "Juan",
       "email": "juan@email.net",
       "password": "123456",
-      "rol": "usuario"
+      "rol": 2
     }, {
       "id": 3,
       "nombre": "Hugo",
       "email": "hugo@email.net",
       "password": "123456",
-      "rol": "usuario"
+      "rol": 1
     }, {
       "id": 4,
       "nombre": "Carlos",
       "email": "carlos@email.net",
       "password": "123456",
-      "rol": "admin"
+      "rol": 2
     }, {
       "id": 5,
       "nombre": "Maria",
       "email": "maria@email.net",
       "password": "123456",
-      "rol": "admin"
+      "rol": 2
     }];
   }
 
@@ -58,11 +58,11 @@ export class UserService {
     return this.http.get(`${this.API_URI}/find/${id}`);
   }
 
-  guardarUsuario(usuario: User) {
+  guardarUsuario(usuario: Usuario) {
     return this.http.post(`${this.API_URI}/add`, usuario);
   }
 
-  actualizarUsuario(id: number, actualizaUsuario: User) {
+  actualizarUsuario(id: number, actualizaUsuario: Usuario) {
     return this.http.put(`${this.API_URI}/update/${id}`, actualizaUsuario);
   }
 
@@ -75,7 +75,7 @@ export class UserService {
     return this.http.delete(`${this.API_URI}/delete/${id}`);
   }
 
-  loginUsuario(usuario: User) {
+  loginUsuario(usuario: Usuario) {
     return this.http.post(`${this.API_URI}/signin/`, usuario);
   }
 
