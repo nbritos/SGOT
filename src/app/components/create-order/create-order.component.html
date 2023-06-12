@@ -1,14 +1,31 @@
-<p>create-order works!</p>
-<form (submit)="createOrder()">
-    <label>Title:</label>
-    <input [(ngModel)]="newOrder.title" required>
+<br>
+<div class="form-container">
+  <form (submit)="createOrder()">
+    <label>Titulo:</label>
+    <input [(ngModel)]="newOrder.title" name="title" required>
     <br>
-    <label>Description:</label>
-    <textarea [(ngModel)]="newOrder.description" required></textarea>
+
+    <label>Descripcion:</label>
+    <textarea [(ngModel)]="newOrder.description" name="description" required></textarea>
     <br>
-    <label>Assigned To:</label>
-    <input [(ngModel)]="newOrder.assignedTo" required>
+
+    <label>Asignado a:</label>
+    <select [(ngModel)]="newOrder.assignedTo" name="assignedTo" required>
+      <option *ngFor="let user of availableUsers" [value]="user">{{ user }}</option>
+    </select>
+
+    <label>Foto de la caldera:</label>
+    <div class="file-input-container">
+      <input type="file" (change)="onFileSelected($event)">
+      <button *ngIf="isFileSelected" type="button" class="btn btn-danger btn-floating" (click)="removeFile()">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
     <br>
-    <button type="submit">Create Order</button>
+
+    <label>Link de la foto:</label>
+    <input [(ngModel)]="newOrder.fotoCaldera" name="fotoCaldera" [disabled]="isFileSelected">
+    <br>
+    <button type="submit" class="btn btn-success">Crear Orden</button>
   </form>
-  
+</div>

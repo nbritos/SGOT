@@ -1,6 +1,26 @@
-<p>order-list works!</p>
 <ul>
-    <li *ngFor="let order of orders">
+    <li *ngFor="let order of orders" class="order">
         {{order.title}}
+        <p>
+            {{order.description}}
+        </p>
+        <p>
+            {{order.assignedTo}}
+        </p>
+        <input type="checkbox">
     </li>
 </ul>
+
+
+<!-- listado si cada detalle de la orden fuese un arreglo:
+<h2>Listado de órdenes de trabajo</h2>
+<ul>
+  <li *ngFor="let orden of ordenes" class="order">
+    {{ orden.descripcion }}
+    <ul>
+      <li *ngFor="let detalle of orden.detalles" class="details">
+        {{ detalle }}
+      </li>
+    </ul>
+  </li>
+</ul> -->

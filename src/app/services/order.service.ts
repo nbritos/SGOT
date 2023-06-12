@@ -16,7 +16,15 @@ export class OrderService {
             description:'Reparar fuga en caja de humo',
             assignedTo:'Sabrina',
             status:'Backorder'
-        }]
+        },
+        {
+            id:2,
+            title:'Caldera 15 rota',
+            description:'Pérdida de aceite en compresora',
+            assignedTo:'Claudio',
+            status:'En proceso'
+        },
+    ]
     }
 
     getOrders(): Order[] {
