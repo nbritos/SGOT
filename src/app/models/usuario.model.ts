@@ -7,4 +7,5 @@ export interface Usuario{
 	alta?:Date;
 	activado?: string;
 	perfil?: string;
+	avatar?:string;
 }
