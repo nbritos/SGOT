@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl:'user-profile.component.html',
-  styleUrls: ['user-profile.component.css']
+  selector: 'app-register-user',
+  templateUrl: './register-user.component.html',
+  styleUrls: ['./register-user.component.css']
 })
-
-export class UserProfileComponent implements OnInit {
+export class RegisterUserComponent {
 
   user: Usuario = {};
+
 
   ngOnInit() {
     // Inicializa los datos del usuario

@@ -14,3 +14,7 @@
 .navbar-brand:hover{
     color: rgb(28, 161, 202);
 }
+
+#logOut{
+    cursor:pointer;
+}

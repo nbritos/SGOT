@@ -1,0 +1,44 @@
+.remito-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.remito-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.remito-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.remito-section {
+    margin-bottom: 20px;
+}
+
+.remito-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.remito-label {
+    font-weight: bold;
+}
+
+.remito-value {
+    margin: 5px 0;
+}
+
+.remito-signature {
+    margin-top: 50px;
+}
+
+.producto {
+    margin-bottom: 10px;
+}

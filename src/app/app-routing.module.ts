@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { CreateOrderComponent } from './components/create-order/create-order.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { RegisterUserComponent } from './components/register-user/register-user.component';
+import { RemitoComponent } from './components/remito/remito.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,14 @@ const routes: Routes = [
     path: 'profile',
     component: UserProfileComponent
   },
+  {
+    path:'user/register',
+    component:RegisterUserComponent
+  },
+  {
+    path:'remito',
+    component:RemitoComponent
+  }
   // ,
   // {
   //   path: 'usuarios/home',
