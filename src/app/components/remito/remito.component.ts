@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-remito',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class RemitoComponent {
 
+  constructor() {
+
+  }
+
+  @ViewChild('content', { static: false }) contentRef!: ElementRef;
+
+  SavePDF() {
+    const doc = new jsPDF();
+    const content = this.contentRef.nativeElement;
+
+    doc.html(content, {
+      callback: function (doc) {
+        doc.save('remito.pdf');
+      }
+    });
+  }
 }

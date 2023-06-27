@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="remito-container">
+    <div class="remito-container" #content>
         <h1 class="remito-title">REMITO</h1>
         <div class="remito-info">
             <div class="remito-section">
@@ -61,6 +61,7 @@
             <p class="remito-label">Firma del Receptor:</p>
             <p class="remito-value">_______________________</p>
         </div>
+        <input type="button" value="Guardar PDF" class="btn btn-success" (click)="SavePDF()">
     </div>
 </body>
 
