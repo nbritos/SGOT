@@ -24,7 +24,8 @@
     <br>
 
     <label>Link de la foto:</label>
-    <input [(ngModel)]="newOrder.fotoCaldera" name="fotoCaldera" [disabled]="isFileSelected">
+    <!-- <input [(ngModel)]="newOrder.fotoCaldera" name="fotoCaldera" [disabled]="isFileSelected"> -->
+    <input class="form-control-plaintext" [(ngModel)]="newOrder.fotoCaldera" name="fotoCaldera" readonly>
     <br>
     <button type="submit" class="btn btn-success">Crear Orden</button>
   </form>

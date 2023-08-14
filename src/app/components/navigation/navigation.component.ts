@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -7,6 +7,38 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
+
+//**USAR ESTA CLASE**//
+
+// export class NavigationComponent implements OnInit {
+
+//   revelar: boolean = true;
+
+//   constructor(private usuariosService: UserService, private router: Router) {
+
+//   }
+
+//   ngOnInit(): void {
+//     this.revelar = this.usuariosService.userAdmin();
+//   }
+
+//   esAdmin(): boolean {
+//     return this.usuariosService.userAdmin();
+//   }
+
+//   esUser():boolean{
+//     return this.usuariosService.userUser();
+//   }
+
+//   logOut() {
+//     console.log('log out!!');
+//     console.log(this.revelar);
+//     this.revelar = !this.revelar;
+//     // this.usuariosService.logOut();
+//     // this.router.navigate(['usuarios/principal']);
+//   }
+// }
+  
 export class NavigationComponent {
 
   revelar = true;

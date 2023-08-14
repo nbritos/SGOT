@@ -1,4 +1,4 @@
-export interface Rol {
-    id?:number,
+export interface IRol {
+    id_rol?:number,
     descripcion?:string
 }

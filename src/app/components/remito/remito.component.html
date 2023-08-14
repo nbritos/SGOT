@@ -9,59 +9,67 @@
 
 <body>
     <div class="remito-container" #content>
+        <input class="remito-label" type="text">
+        <p class="remito-label">Fecha</p>
         <h1 class="remito-title">REMITO</h1>
         <div class="remito-info">
             <div class="remito-section">
-                <p class="remito-label">Número de Remito:</p>
-                <p class="remito-value">[Número de Remito]</p>
+                <input class="form-control" type="text">
+                <p class="remito-label">Número de Remito</p>
             </div>
-            <div class="remito-section">
-                <p class="remito-label">Fecha:</p>
-                <p class="remito-value">[Fecha del Remito]</p>
-            </div>
+            <br>
+
+        </div>
+        <div class="remito-section">
+            <input *ngIf="imagenSeleccionada" type="file" (change)="cargaImagen($event)">
+            <img [src]="seleccionImagen" [style.width.px]="imgWidth" [style.height.px]="imgHeight"
+                *ngIf="seleccionImagen" alt="Imagen Cargada">
         </div>
 
         <div class="remito-section">
             <h2 class="remito-subtitle">Vendedor:</h2>
-            <p><strong>Nombre de la Empresa:</strong> [Nombre de la Empresa]</p>
-            <p><strong>Dirección:</strong> [Dirección del Vendedor]</p>
-            <p><strong>Teléfono:</strong> [Teléfono del Vendedor]</p>
-            <p><strong>Email:</strong> [Email del Vendedor]</p>
+            <p><strong>Nombre de la Empresa:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Dirección:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Teléfono:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Email:</strong> <input class="form-control" type="text"></p>
         </div>
 
         <div class="remito-section">
             <h2 class="remito-subtitle">Comprador:</h2>
-            <p><strong>Nombre:</strong> [Nombre del Comprador]</p>
-            <p><strong>Dirección:</strong> [Dirección del Comprador]</p>
-            <p><strong>Teléfono:</strong> [Teléfono del Comprador]</p>
-            <p><strong>Email:</strong> [Email del Comprador]</p>
+            <p><strong>Nombre:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Dirección:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Teléfono:</strong> <input class="form-control" type="text"></p>
+            <p><strong>Email:</strong> <input class="form-control" type="text"></p>
         </div>
 
         <div class="remito-section">
             <h2 class="remito-subtitle">Detalle de la Entrega:</h2>
             <div class="producto">
-                <p><strong>Producto:</strong> [Nombre del Producto 1]</p>
-                <p><strong>Cantidad:</strong> [Cantidad del Producto 1]</p>
-                <p><strong>Descripción:</strong> [Descripción del Producto 1]</p>
+                <p><strong>Producto:</strong> <input class="form-control" type="text"></p>
+                <p><strong>Cantidad:</strong> <input class="form-control" type="text"></p>
+                <p><strong>Descripción:</strong> <input class="form-control" type="text"></p>
             </div>
             <div class="producto">
-                <p><strong>Producto:</strong> [Nombre del Producto 2]</p>
-                <p><strong>Cantidad:</strong> [Cantidad del Producto 2]</p>
-                <p><strong>Descripción:</strong> [Descripción del Producto 2]</p>
+                <p><strong>Producto:</strong> <input class="form-control" type="text"></p>
+                <p><strong>Cantidad:</strong> <input class="form-control" type="text"></p>
+                <p><strong>Descripción:</strong> <input class="form-control" type="text"></p>
             </div>
-            <!-- Agregar más productos si es necesario -->
         </div>
 
         <div class="remito-section">
             <h2 class="remito-subtitle">Observaciones:</h2>
-            <p>[Observaciones adicionales]</p>
+            <p><input class="form-control" type="text"></p>
         </div>
 
         <div class="remito-signature">
             <p class="remito-label">Firma del Receptor:</p>
             <p class="remito-value">_______________________</p>
+            <input [hidden]="!mostrarBoton" type="button" value="Guardar PDF" class="btn btn-success"
+                (click)="SavePDF()">
         </div>
-        <input type="button" value="Guardar PDF" class="btn btn-success" (click)="SavePDF()">
+        <div>
+
+        </div>
     </div>
 </body>
 

@@ -1,13 +1,10 @@
-export interface Usuario{
-	id?: number;
+export interface IUser{
+	id_usuario?: number;
+	rol?: number;
+	estado?: number;
+	dni?:number;
+	password?: string;
 	nombre?: string;
 	apellido?:string;
 	email?: string;
-	password?: string;
-	dni?:number;
-	rol?: number;
-	alta?:Date;
-	estado?: number;
-	perfil?: string;
-	avatar?:string;
 }

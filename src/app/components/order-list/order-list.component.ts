@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Order } from 'src/app/models/orden.model';
-import { Usuario } from 'src/app/models/usuario.model';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({

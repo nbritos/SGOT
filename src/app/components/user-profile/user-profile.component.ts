@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/models/usuario.model';
+import { IUser } from 'src/app/models/usuario.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,7 +9,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 
 export class UserProfileComponent implements OnInit {
 
-  user: Usuario = {};
+  user: IUser = {};
 
   ngOnInit() {
     // Inicializa los datos del usuario
