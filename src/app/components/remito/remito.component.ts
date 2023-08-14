@@ -15,6 +15,7 @@ export class RemitoComponent {
   @ViewChild('content', { static: false }) contentRef!: ElementRef;
 
   mostrarBoton = true;
+  mostrarBotonImagen=false;
   seleccionImagen: string | undefined;
   imgWidth = 80; // Ancho de la imagen
   imgHeight = 80; // Alto de la imagen
@@ -30,6 +31,13 @@ export class RemitoComponent {
       reader.readAsDataURL(file);
     }
     this.imagenSeleccionada=false;
+    this.mostrarBotonImagen=true;
+  }
+
+  eliminarImagen(){
+    this.seleccionImagen=undefined;
+    this.mostrarBotonImagen=false;
+    this.imagenSeleccionada=true;
   }
 
   async SavePDF() {

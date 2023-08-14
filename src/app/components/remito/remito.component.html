@@ -25,6 +25,10 @@
             <img [src]="seleccionImagen" [style.width.px]="imgWidth" [style.height.px]="imgHeight"
                 *ngIf="seleccionImagen" alt="Imagen Cargada">
         </div>
+        <div class="remito-section" *ngIf="mostrarBotonImagen">
+            <button (click)="eliminarImagen()">Eliminar</button>
+        </div>
+
 
         <div class="remito-section">
             <h2 class="remito-subtitle">Vendedor:</h2>
