@@ -11,7 +11,7 @@
 
     <label>Asignado a:</label>
     <select [(ngModel)]="newOrder.assignedTo" name="assignedTo" required>
-      <option *ngFor="let user of availableUsers" [value]="user">{{ user }}</option>
+      <option *ngFor="let usuario of usuariosTecnicos" [value]="usuario">{{ usuario }}</option>
     </select>
 
     <label>Foto de la caldera:</label>

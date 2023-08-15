@@ -108,21 +108,25 @@ export class UserService {
     return this.http.get(`${this.API_URI}/find/${id}`);
   }
 
-  guardarUsuario(usuario: IUser){
-    return this.http.post(`${this.API_URI}/add`,usuario);
+  guardarUsuario(usuario: IUser) {
+    return this.http.post(`${this.API_URI}/add`, usuario);
   }
 
-  actualizarUsuario(id:string, actualizaUsuario: IUser){
-    return this.http.put(`${this.API_URI}/update/${id}`,actualizaUsuario);
+  actualizarUsuario(id: string, actualizaUsuario: IUser) {
+    return this.http.put(`${this.API_URI}/update/${id}`, actualizaUsuario);
   }
 
-  eliminarUsuario(id:string){
+  eliminarUsuario(id: string) {
     return this.http.delete(`${this.API_URI}/delete/${id}`);
   }
 
-  loginUsuario(nombre : string, password : string){
-    let usuario: IUser = {nombre, password};
-    return this.http.post(`${this.API_URI}/signin/`, usuario);
+  // loginUsuario(nombre : string, password : string){
+  //   let usuario: IUser = {nombre, password};
+  //   return this.http.post(`${this.API_URI}/login/`, usuario);
+  // }
+
+  loginUsuario(usuario: IUser) {
+    return this.http.post(`${this.API_URI}/login/`, usuario);
   }
 
   cargarUsuariosLocal() {
@@ -130,49 +134,50 @@ export class UserService {
     this.usuarios = JSON.parse(localStorage.getItem("Usuarios") || '{}');
   }
 
-  setToken(token:string) {
+  setToken(token: string) {
     localStorage.setItem('token', token);
   }
 
-  setId(id:string) {
+  setId(id: string) {
     localStorage.setItem('id', id);
   }
 
-  getToken(){//Obtenemos el token que despues enviara el interceptor x cada req
-		return localStorage.getItem('token');
-	}
+  getToken() {//Obtenemos el token que despues enviara el interceptor x cada req
+    return localStorage.getItem('token');
+  }
 
-  getId(){
-		return localStorage.getItem('id');
-	}
+  getId() {
+    return localStorage.getItem('id');
+  }
 
   isLoggedIn(): Boolean {
     return !!localStorage.getItem('token'); //Si existe token retorna true
     //es el equivalente de testearlo con if pero ahora en una sola linea.
   }
 
-  logOut(){
-		localStorage.removeItem('token');
+  logOut() {
+    localStorage.removeItem('token');
     localStorage.removeItem('id');
-	}
+  }
 
   // setRol(usuario : IUser){
   //   localStorage.setItem('rol', usuario.rol!);
   // }
 
-  getRol(){
+  getRol() {
     return this.http.get(`${this.API_URI}/getRolCurrentUser/${this.getId()}/`);
   }
 
-  validarEmail(email: string): boolean{
+  validarEmail(email: string): boolean {
     const usuario = this.usuarios.find(u => u.email == email)
-    if (usuario){
+    if (usuario) {
       return true
     }
     else {
       return false
     }
   }
+  /****VER ESTO******/
   userAdmin(): boolean {
 
     if (localStorage["rol"] == 'admin') {
@@ -182,10 +187,12 @@ export class UserService {
   }
 
   userUser(): boolean {
-      if (localStorage["rol"] == 'tecnico') {
-        return true;
-      }
-      return false;
+    if (localStorage["rol"] == 'tecnico') {
+      return true;
     }
+    return false;
+  }
+
+  /******************/
 }
 

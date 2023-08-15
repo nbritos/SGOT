@@ -18,12 +18,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'remito',
-    component: RemitoComponent
-    // canActivate: [AuthGuard]
+    component: RemitoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -32,28 +33,22 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrderListComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'create',
     component: CreateOrderComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: UserProfileComponent,
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'user/register',
     component: RegisterUserComponent
-  },
-  {
-    //Evaluar si debería redirigir al formulario de login si no tiene token
-    path: 'usuarios/home',
-    component: HomeComponent,
-    //canActivate: [AuthGuard]
-  },
+  }
 ];
 
 

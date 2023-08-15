@@ -14,12 +14,11 @@ export class RolService {
   constructor(private http: HttpClient) {
   }
 
-
   listarRoles() {
-    
+
     // return this.http.get(`${this.API_URI}/list`);
     //si no funciona usar 
-    return this.http.get(this.API_URI+'/list');
+    return this.http.get(this.API_URI + '/list');
   }
 
   buscarRol(id: number) {

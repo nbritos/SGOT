@@ -10,58 +10,58 @@ import { UserService } from 'src/app/services/user.service';
 
 //**USAR ESTA CLASE**//
 
-// export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit {
 
-//   revelar: boolean = true;
+  revelar: boolean = true;
 
-//   constructor(private usuariosService: UserService, private router: Router) {
+  constructor(private usuariosService: UserService, private router: Router) {
 
-//   }
+  }
 
-//   ngOnInit(): void {
-//     this.revelar = this.usuariosService.userAdmin();
-//   }
+  ngOnInit(): void {
+    this.revelar = this.usuariosService.userAdmin();
+  }
 
-//   esAdmin(): boolean {
-//     return this.usuariosService.userAdmin();
-//   }
+  esAdmin(): boolean {
+    return this.usuariosService.userAdmin();
+  }
 
-//   esUser():boolean{
-//     return this.usuariosService.userUser();
-//   }
-
-//   logOut() {
-//     console.log('log out!!');
-//     console.log(this.revelar);
-//     this.revelar = !this.revelar;
-//     // this.usuariosService.logOut();
-//     // this.router.navigate(['usuarios/principal']);
-//   }
-// }
-  
-export class NavigationComponent {
-
-  revelar = true;
-
-  // constructor(private usuariosService: UserService, private router: Router) { }
-
+  esUser():boolean{
+    return this.usuariosService.userUser();
+  }
 
   logOut() {
     console.log('log out!!');
     console.log(this.revelar);
-    this.revelar=!this.revelar;
-    // this.usuariosService.logOut();
-    // this.router.navigate(['usuarios/principal']);
+    this.revelar = !this.revelar;
+    this.usuariosService.logOut();
+    this.router.navigate(['home']);
   }
-
-  // esAdmin():boolean{
-  //   return this.usuariosService.esAdmin();;
-  // }
-
-  // ngOnInit(): void {
-  // }
-
-  // muestra(){
-  //   console.log("principal");
-  // }
 }
+  
+// export class NavigationComponent {
+
+//   revelar = true;
+
+//   // constructor(private usuariosService: UserService, private router: Router) { }
+
+
+//   logOut() {
+//     console.log('log out!!');
+//     console.log(this.revelar);
+//     this.revelar=!this.revelar;
+//     // this.usuariosService.logOut();
+//     // this.router.navigate(['usuarios/principal']);
+//   }
+
+//   // esAdmin():boolean{
+//   //   return this.usuariosService.esAdmin();;
+//   // }
+
+//   // ngOnInit(): void {
+//   // }
+
+//   // muestra(){
+//   //   console.log("principal");
+//   // }
+// }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/models/orden.model';
+import { IUser } from 'src/app/models/usuario.model';
 import { OrderService } from 'src/app/services/order.service';
 
 
@@ -11,6 +12,7 @@ import { OrderService } from 'src/app/services/order.service';
 
 export class CreateOrderComponent implements OnInit {
 
+  actual:IUser={};
   newOrder: Order = {
     id: 0,
     title: '',
@@ -19,7 +21,7 @@ export class CreateOrderComponent implements OnInit {
     status: ''
   };
 
-  availableUsers: string[] = []; // Obtén esta lista de usuarios desde tu base de datos
+  usuariosTecnicos: string[] = []; // Obtén esta lista de usuarios desde tu base de datos
   isFileSelected: boolean = false;
 
   constructor(private orderService: OrderService) {
@@ -27,7 +29,14 @@ export class CreateOrderComponent implements OnInit {
 
   ngOnInit() {
     console.log("En este instante el componente ha cargado");
-    this.availableUsers = ['User 1', 'User 2', 'User 3'];//llamar al servicio
+    // this.usuariosDisponibles = ['User 1', 'User 2', 'User 3'];//llamar al servicio
+    this.orderService.listarTecnicos().subscribe(
+      (res:any)=>{
+        this.usuariosTecnicos=(res);
+        // Object.assign(this.actual, this.usuariosTecnicos[0]);
+        console.log(this.usuariosTecnicos);
+      }
+    )
   }
 
   createOrder(): void {

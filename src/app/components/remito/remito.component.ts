@@ -43,6 +43,7 @@ export class RemitoComponent {
   async SavePDF() {
 
     this.mostrarBoton = false;
+    this.mostrarBotonImagen=false;
 
     const doc = new jsPDF();
     const content = this.contentRef.nativeElement;
