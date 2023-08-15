@@ -21,15 +21,13 @@ export class CreateOrderComponent implements OnInit {
     status: ''
   };
 
-  usuariosTecnicos: string[] = []; // Obtén esta lista de usuarios desde tu base de datos
+  usuariosTecnicos: IUser[] = []; // Obtén esta lista de usuarios desde tu base de datos
   isFileSelected: boolean = false;
 
   constructor(private orderService: OrderService) {
   }
 
   ngOnInit() {
-    console.log("En este instante el componente ha cargado");
-    // this.usuariosDisponibles = ['User 1', 'User 2', 'User 3'];//llamar al servicio
     this.orderService.listarTecnicos().subscribe(
       (res:any)=>{
         this.usuariosTecnicos=(res);

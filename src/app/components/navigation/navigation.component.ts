@@ -12,14 +12,14 @@ import { UserService } from 'src/app/services/user.service';
 
 export class NavigationComponent implements OnInit {
 
-  revelar: boolean = true;
 
   constructor(private usuariosService: UserService, private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.revelar = this.usuariosService.userAdmin();
+    // this.revelar = this.usuariosService.userAdmin();
+    this.usuariosService.userAdmin();
   }
 
   esAdmin(): boolean {
@@ -32,36 +32,11 @@ export class NavigationComponent implements OnInit {
 
   logOut() {
     console.log('log out!!');
-    console.log(this.revelar);
-    this.revelar = !this.revelar;
+    // console.log(this.revelar);
+    // this.revelar = !this.revelar;
     this.usuariosService.logOut();
     this.router.navigate(['home']);
   }
 }
   
-// export class NavigationComponent {
 
-//   revelar = true;
-
-//   // constructor(private usuariosService: UserService, private router: Router) { }
-
-
-//   logOut() {
-//     console.log('log out!!');
-//     console.log(this.revelar);
-//     this.revelar=!this.revelar;
-//     // this.usuariosService.logOut();
-//     // this.router.navigate(['usuarios/principal']);
-//   }
-
-//   // esAdmin():boolean{
-//   //   return this.usuariosService.esAdmin();;
-//   // }
-
-//   // ngOnInit(): void {
-//   // }
-
-//   // muestra(){
-//   //   console.log("principal");
-//   // }
-// }
